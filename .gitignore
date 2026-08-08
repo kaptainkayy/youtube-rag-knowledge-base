@@ -6,3 +6,11 @@ transcripts/
 *.egg-info/
 dist/
 build/
+
+# youtube-rag-knowledge-base
+.venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.superpowers/
+models/

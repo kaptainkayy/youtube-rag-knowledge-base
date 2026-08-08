@@ -112,6 +112,8 @@ def main():
     parser.add_argument("question", nargs="?", help="Question to ask")
     parser.add_argument("--kb-path", default="knowledge_base")
     parser.add_argument("--llm", default="ollama/llama3", help="LLM in format provider/model")
+    parser.add_argument("--embedding-provider", default="sentence-transformers")
+    parser.add_argument("--embedding-model", default="all-MiniLM-L6-v2")
     parser.add_argument("--top-k", type=int, default=5)
     parser.add_argument("--interactive", action="store_true", help="Interactive mode")
     args = parser.parse_args()
@@ -124,6 +126,8 @@ def main():
         kb_path=args.kb_path,
         llm_provider=llm_provider,
         llm_model=llm_model,
+        embedding_provider=args.embedding_provider,
+        embedding_model=args.embedding_model,
         top_k=args.top_k,
     )
 
